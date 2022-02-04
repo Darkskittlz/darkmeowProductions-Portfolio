@@ -1,33 +1,18 @@
 import React from 'react'
-import styled from "styled-components"
+import HomeElement from '../constants/homeElement'
+import '../App.css'
 
 
-const Card = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    h1 {
-        font-size: 25px;
-    }
-`
-const Body = styled.section`
-    height: 40vw;
-    display: flex;
-    align-content: center;
-`
 
 const Homepage = () => {
     return (
-        <>
-            <Body>
-                <Card>
-                    <h1>Home Page</h1>
-                </Card>
-            </Body>
-        </>
+        <div id='homeBody'>
+            <div id='homeCard'>
+                <HomeElement />
+                <h1 id='homeTitle'>Welcome to the Dev Shop</h1>
+            </div>
+        </div>
     )
-}
+};
 
 export default Homepage
