@@ -102,9 +102,33 @@ a:hover{
     align-items: center;
 }
 
+/* nate's css start */
+
 #canvas{
     position: absolute;
 }
+
+#homeBody {
+    height: 80vw;
+    display: flex;
+    align-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+#homeCard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeTitle {
+    font-size: 25px;
+    position: relative;
+}
+
+/* nate's css end */
 
 @media screen and (max-width:1300px){
     .main{
