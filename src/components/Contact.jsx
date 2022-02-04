@@ -258,6 +258,7 @@ const Contact = () => {
                         </Modal3>
                     </ContactCard>
             </Body>
+            <Breathe />
         </>
     )
 }
