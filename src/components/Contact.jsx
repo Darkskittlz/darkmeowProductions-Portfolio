@@ -3,20 +3,28 @@ import { useModal } from 'react-hooks-use-modal'
 import styled from "styled-components"
 
 
+const Header = styled.div`
+width: 100%;
+grid-row: 2;
+grid-column:1/4;
+padding: 15px;
+text-align: center;
+font-size: 3rem;
+grid-row: 1;
+color: white;
+font-family: "Yellowtail";
+`
+
 const Card = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-row: 1;
+    grid-row: 2;
     grid-column:1/4;
     padding: 15px;
     text-align: center;
     font-size: 1.4rem;
-
-    h1 {
-        font-size: 25px;
-    }
 `
 
 const ContactCard = styled.div`
@@ -27,8 +35,13 @@ const ContactCard = styled.div`
     align-items: center;
     text-align: center;
     font-size: 1.4rem;
-    grid-row: 2;
+    grid-row: 3;
     padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff; 
+    background-color: rgba(255, 255, 255, 0.5);
+
 
     button {
         background: transparent;
@@ -39,17 +52,29 @@ const ContactCard = styled.div`
     }
     
         button:hover {
-        color: white;
+        color: #001528;
         background-color: #1990FF;
         transition: 300ms;
+        border: 3px solid #fff;
+        border-style: double; 
+        box-shadow: 0 0 10px #fff; 
     }
 `
 
 const Body = styled.section`
+    background-color: #001528;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-gap: 20px;
+    align-content: center;
+    text-align: center;
+    color: white;
+
+    h1 {
+        color: white;
+        font-size: 25px;
+    }
 `
 
 const Contact = () => {
@@ -71,6 +96,7 @@ const Contact = () => {
     return (
         <>
             <Body>
+                <Header>Contact</Header>
                 <Card>
                     <h1>Interested in working with us? Thinking about checking out our other projects? Just want to tell us we did a good job? Here's where to do it.</h1>
                 </Card>
