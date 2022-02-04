@@ -1,9 +1,11 @@
 import '../App.css';
 import React, { Suspense, useCallback, useMemo, useRef } from 'react';
 import { Canvas, extend, useFrame, useLoader, useThree } from 'react-three-fiber';
+import { Container, Row, Col } from 'react-grid-system';
+import typewriter from '../assets/notMyType.otf';
 import * as THREE from 'three';
 import circleImg from '../assets/circle.png';
-import Merch from '../constants/constants';
+import { Merch } from '../constants/constants';
 import styled from 'styled-components';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 extend({ OrbitControls })
@@ -119,27 +121,94 @@ function AnimationCanvas() {
     );
 }
 
-const Card = styled.div`
-    width: 100%;
+const TitleBox = styled.div`
     display: flex;
-    z-index: 999;
+    position: fixed;
+    width: calc(100% - 200px);
     justify-content: center;
-    align-items: center;
+    margin-top: 20px;
+`
 
-    h1 {
-        font-size: 25px;
-    }
+const Title = styled.h1`
+    font-size: 70px;
+    font-family: 'Yellowtail', cursive;
+    margin-bottom: 0;
+    color: white;
 `
-const Body = styled.section`
-    height: 40vw;
-    display: flex;
-    align-content: center;
+
+
+const Body = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 81%;
+    height: 300px; 
+    padding: 1rem;
+    row-gap: 2rem;
+    position: fixed;
+    z-index: 999;
+    position: absolute;
+    left: 61%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 `
+
+const Card = styled.div`
+        width: 250px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(4px);
+        z-index: 999;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 25px;
+            font-family: "notMyType";
+            color: white;
+            width: 100%;
+            text-align: center;
+            z-index: 999;
+        }
+
+        p {
+            text-align: center;er
+            color: white;
+            font-size: 20px;
+        }
+    `
+
+
+const ProductGrid = () => {
+    return (
+        <>
+            <TitleBox><Title>Products</Title></TitleBox>
+            <Body>
+                {Merch.map(({ id, image, title, description }) => (
+                    <Row>
+                        <Col sm={2}>
+                            <Card key={id}>
+                                <img src={image} alt={title} />
+                                <h1>{title}</h1>
+                                {/* <p>{description}</p> */}
+                            </Card>
+                        </Col>
+                    </Row>
+                ))}
+            </Body>
+        </>
+    )
+}
 
 
 const Products = () => {
     return (
         <>
+            <ProductGrid />
             <div className="anim">
                 <Suspense fallback={<div>Loading...</div>}>
                     <AnimationCanvas />
