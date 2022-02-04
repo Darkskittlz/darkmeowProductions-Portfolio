@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import HomeElement from '../constants/homeElement'
 
 
 const Card = styled.div`
@@ -7,15 +8,19 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     h1 {
         font-size: 25px;
+        position: relative;
     }
 `
 const Body = styled.section`
     height: 40vw;
     display: flex;
     align-content: center;
+    position: relative;
+    z-index: 1;
 `
 
 const Homepage = () => {
@@ -23,6 +28,7 @@ const Homepage = () => {
         <>
             <Body>
                 <Card>
+                <HomeElement />
                     <h1>Home Page</h1>
                 </Card>
             </Body>
