@@ -1,12 +1,13 @@
 import React from 'react';
 import * as THREE from 'three'
-import { ReactThreeFiber } from 'react-three-fiber';
 import '../Styles/homeElement.css'
 import '../App.css'
 
 const HomeElement = () => {
 
-  var renderer, scene, camera, composer, circle, skelet, particle;
+  var renderer, scene, camera, circle, skelet, particle;
+
+  // add var "composer" if needed
 
   window.onload = function() {
     init();
