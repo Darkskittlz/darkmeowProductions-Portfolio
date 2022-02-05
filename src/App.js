@@ -1,11 +1,12 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
-import { Navbar, Homepage } from './components'
+import { Navbar } from './components'
 import './App.css'
 import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
+import Homepage from './components/Homepage';
 
 const App = () => {
     return (

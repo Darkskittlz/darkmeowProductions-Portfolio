@@ -6,16 +6,30 @@
     src: url("./assets/shakespeare.ttf");
     font-family: "notMyType";
     src: url("./assets/notMyType.otf");
-  }
+}
 
+/* adds text animation -nate */
+@keyframes glitch {
+	2%,
+	64% {
+		transform: translate(5px, 0) skew(1deg);
+	}
+	4%,
+	60% {
+		transform: translate(-5px, 1) skew(4deg);
+	}
+	62% {
+		transform: translate(2px, 0) skew(8deg);
+	}
+}
 
 :root{
     --text-primary:#000;
     --bgPrimary:#fff;
-   --bgSecondary: #F9F9F9;
-   --pink: #0071bd;
-   --light-blue: #e6f7ff;
-   --border: #d9d9d9;
+    --bgSecondary: #F9F9F9;
+    --pink: #0071bd;
+    --light-blue: #e6f7ff;
+    --border: #d9d9d9;
 }
 
 html, 
@@ -109,12 +123,11 @@ a:hover{
 }
 
 #homeBody {
-    height: 80vw;
+    height: 100vh;
     display: flex;
     align-content: center;
     position: relative;
     z-index: 1;
-    
 }
 
 #homeCard {
@@ -122,18 +135,17 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: url(https://image.ibb.co/h2hLAJ/bg.png) #000 center;
-    background-repeat: repeat; */
     background-image: linear-gradient(-100deg, #845EC2, #0081CF);
     color: #4B4453;
 }
 
-#homeTitle {
-    font-size: 2rem;
+.homeTitle {
+    font-size: 2.4rem;
     font-weight: bolder;
     position: relative;
     color:  #845EC2;
     text-shadow: #FEFEDF 1px 0 5px;
+    animation: glitch 2s linear infinite;
 }
 
 /* nate's css end */
@@ -182,7 +194,7 @@ a:hover{
         z-index: 100;
         background-color: var(--bgSecondary);
     }
-  
+
     .menu-control-container{
         display: block !important;
     }
@@ -196,6 +208,12 @@ a:hover{
     }
     .show-more{
         font-size: 1.3rem !important;
+    }
+
+    #homeBody {
+        height: 100vh;
+        width: 80vw;
+        display: flex;
     }
 }
 

@@ -1,17 +1,26 @@
-import React from 'react'
-import HomeElement from '../constants/homeElement'
+import React, { useEffect} from 'react'
+import homeElement from '../constants/homeElement.js'
 import '../App.css'
 
 
 
-const Homepage = () => {
+const Homepage = (props) => {
+
+    useEffect(() => {
+        homeElement();
+    }, []);
+
+    // console.log("the visits are at: ", visitCount)
+
     return (
-        <div id='homeBody'>
-            <div id='homeCard'>
-                <HomeElement />
-                <h1 id='homeTitle'>Welcome to the Dev Shop</h1>
+        <>
+            <div id='homeBody'>
+                <div id='homeCard'>
+                    <div id="canvas"></div>
+                    <h1 className='homeTitle'>Welcome to the Dev Shop</h1>
+                </div>
             </div>
-        </div>
+        </>
     )
 };
 
