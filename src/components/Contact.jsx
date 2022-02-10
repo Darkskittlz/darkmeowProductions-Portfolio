@@ -3,33 +3,27 @@ import { Canvas, useFrame } from 'react-three-fiber'
 import * as THREE from 'three'
 import { useModal } from 'react-hooks-use-modal'
 import styled from "styled-components"
-
 const roundedSquareWave = (t, delta, a, f) => {
     return ((2 * a) / Math.PI) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
     }
-
     function Dots() {
     const ref = useRef()
     const { vec, transform, positions, distances } = useMemo(() => {
         const vec = new THREE.Vector3()
         const transform = new THREE.Matrix4()
-
       // Precompute randomized initial positions
         const positions = [...Array(10000)].map((_, i) => {
         const position = new THREE.Vector3()
         // Place in a grid
         position.x = (i % 100) - 50
         position.y = Math.floor(i / 100) - 50
-
         // Offset every other column (hexagonal pattern)
         position.y += (i % 2) * 0.5
-
         // Add some noise
         position.x += Math.random() * 0.3
         position.y += Math.random() * 0.3
         return position
         })
-
       // Precompute initial distances with octagonal offset
         const right = new THREE.Vector3(1, 0, 0)
         const distances = positions.map((pos) => {
@@ -40,19 +34,14 @@ const roundedSquareWave = (t, delta, a, f) => {
     useFrame(({ clock }) => {
         for (let i = 0; i < 10000; ++i) {
         const dist = distances[i]
-
         // Distance affects the wave phase
         const t = clock.elapsedTime - dist / 25
-
         // Oscillates between -0.4 and +0.4
         const wave = roundedSquareWave(t, 0.15 + (0.2 * dist) / 72, 0.4, 1 / 3.8)
-
         // Scale initial position by our oscillator
         vec.copy(positions[i]).multiplyScalar(wave + 1.3)
-
         // Apply the Vector3 to a Matrix4
         transform.setPosition(vec)
-
         // Update Matrix4 for this instance
         ref.current.setMatrixAt(i, transform)
         }
@@ -65,7 +54,6 @@ const roundedSquareWave = (t, delta, a, f) => {
         </instancedMesh>
     )
     }
-
     const Breathe = () => {
     return (
         <Canvas orthographic camera={{ zoom: 20 }} colorManagement={false}>
@@ -74,7 +62,6 @@ const roundedSquareWave = (t, delta, a, f) => {
         </Canvas>
     )
     }
-
 const Header = styled.div`
 width: 100%;
 grid-row: 2;
@@ -86,7 +73,6 @@ grid-row: 1;
 color: white;
 font-family: "Yellowtail";
 `
-
 const Card = styled.div`
     width: 100%;
     display: flex;
@@ -98,7 +84,6 @@ const Card = styled.div`
     text-align: center;
     font-size: 1.4rem;
 `
-
 const ContactCard = styled.div`
     width: 100%;
     display: flex;
@@ -113,10 +98,8 @@ const ContactCard = styled.div`
     border-radius: 10px;
     box-shadow: 0 0 10px #fff; 
     background-color: rgba(255, 255, 255, 0.5);
-
-
     button {
-        background: transparent;
+        background-color: rgba(25, 144, 255, 0.6);
         border: 3px solid #001528;
         border-style: double;
         border-radius: 10px;
@@ -133,7 +116,6 @@ const ContactCard = styled.div`
         cursor: pointer;
     }
 `
-
 const ModalCard = styled.div`
     width: 100%;
     display: flex;
@@ -143,7 +125,6 @@ const ModalCard = styled.div`
     border-radius: 10px;
     box-shadow: 0 0 10px #fff; 
     background-color: rgba(255, 255, 255, 0.8);
-
     button {
         background: #fff;
         color: #001528;
@@ -164,7 +145,6 @@ const ModalCard = styled.div`
         box-shadow: 0 0 10px #fff; 
         cursor: pointer;
     }
-
     a {
         color: #001528
     }
@@ -173,7 +153,9 @@ const ModalCard = styled.div`
         color: #fff;
     }
 `
-
+// const Container = styled.div`
+//     width: calc(100% + 400px);
+// `
 const Body = styled.section`
     background-color: #001528;
     display: grid;
@@ -183,34 +165,38 @@ const Body = styled.section`
     align-content: center;
     text-align: center;
     color: white;
-
+    font-family: Futura;
+    
+    @media (max-width: 800px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    }
     h1 {
         color: white;
         font-size: 25px;
     }
 `
-
-
 const Contact = () => {
     const [Modal1, open, close] = useModal("root", {
         preventScroll: true,
         closeOnOverlayClick: false
     })
-
     const [Modal2, open2, close2] = useModal("root", {
         preventScroll: true,
         closeOnOverlayClick: false
     })
-
     const [Modal3, open3, close3] = useModal("root", {
         preventScroll: true,
         closeOnOverlayClick: false
     })
-
     return (
         <>
-        <Breathe />
+        {/* <Breathe /> */}
             <Body>
+                {/* <Container> */}
                 <Header>Contact</Header>
                 <Card>
                     <h1>Interested in working with us? Thinking about checking out our other projects? Just want to tell us we did a good job? Here's where to do it.</h1>
@@ -257,10 +243,10 @@ const Contact = () => {
                         </ModalCard>
                         </Modal3>
                     </ContactCard>
+                    {/* </Container> */}
             </Body>
-            <Breathe />
+            {/* <Breathe /> */}
         </>
     )
 }
-
 export default Contact
