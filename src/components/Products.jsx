@@ -5,8 +5,10 @@ import { Container, Row, Col } from 'react-grid-system';
 import typewriter from '../assets/notMyType.otf';
 import * as THREE from 'three';
 import circleImg from '../assets/circle.png';
-import { Merch } from '../constants/constants';
+import { fadeImages } from '../constants/constants';
 import styled from 'styled-components';
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 extend({ OrbitControls })
 
@@ -127,6 +129,11 @@ const TitleBox = styled.div`
     width: calc(100% - 200px);
     justify-content: center;
     margin-top: 20px;
+    @media (max-width: 860px){
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 `
 
 const Title = styled.h1`
@@ -138,32 +145,46 @@ const Title = styled.h1`
 
 
 const Body = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 81%;
-    height: 300px; 
-    padding: 1rem;
-    row-gap: 2rem;
-    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    row-gap: 0rem;
+    width: 40%;
+    top: 10%;
+    left: 38.5%;
     z-index: 999;
-    position: absolute;
-    left: 61%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: fixed;
+    height: 100%;
+
+    @media (max-width: 860px){
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        left: 2.5%;
+        top: 15%;
+        row-gap: 0rem;
+        width: 95%;
+  }
 `
 
 const Card = styled.div`
-        width: 250px;
-        height: 350px;
-        display: flex;
+        height: 100%;
+        width: 100%;
         flex-direction: column;
         backdrop-filter: blur(4px);
         z-index: 999;
+        background-image: url(fadeImage.url),
 
         img {
             object-fit: cover;
             width: 100%;
             height: 100%;
+            text-align: center;
+
+            @media (max-width: 860px){
+            height: 100%;
+        }
         }
 
         h1 {
@@ -176,11 +197,20 @@ const Card = styled.div`
         }
 
         p {
-            text-align: center;er
+            text-align: center;
             color: white;
             font-size: 20px;
         }
+
+        @media (max-width: 860px){
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: end;
+        }
     `
+
+
 
 
 const ProductGrid = () => {
@@ -188,17 +218,16 @@ const ProductGrid = () => {
         <>
             <TitleBox><Title>Products</Title></TitleBox>
             <Body>
-                {Merch.map(({ id, image, title, description }) => (
-                    <Row>
-                        <Col sm={2}>
-                            <Card key={id}>
-                                <img src={image} alt={title} />
-                                <h1>{title}</h1>
-                                {/* <p>{description}</p> */}
+                <Fade>
+                    {fadeImages.map((fadeImage, index) => (
+                        <div className="each-fade" key={index}>
+                            <Card>
+                                <img src={fadeImage.url} />
                             </Card>
-                        </Col>
-                    </Row>
-                ))}
+                            <h2>{fadeImage.caption}</h2>
+                        </div>
+                    ))}
+                </Fade>
             </Body>
         </>
     )

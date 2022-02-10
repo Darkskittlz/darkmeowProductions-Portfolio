@@ -1,27 +1,15 @@
-export const Merch = [
+export const fadeImages = [
     {
-        image: '/images/jujutsu1.png',
-        title: 'Merch',
-        description: "Test",
-        id: 0
+        url: require('../components/images/jujutsu1.png'),
     },
     {
-        image: "/images/jujutsu2.png",
-        title: 'Merch',
-        description: "Test",
-        id: 1
+        url: require("../components/images/jujutsu2.png"),
     },
     {
-        image: "/images/tanjiro.png",
-        title: 'Merch',
-        description: "Test",
-        id: 2
+        url: require("../components/images/tanjiro.png"),
     },
     {
-        image: "/images/zenitsu.png",
-        title: 'Merch',
-        description: "Test",
-        id: 3
+        url: require("../components/images/zenitsu.png"),
     },
     // {
     //     image: "/images/react-one.jpg",
