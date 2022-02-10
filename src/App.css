@@ -217,6 +217,41 @@ a:hover{
     }
 }
 
+/* Jeremy's CSS */
+
+.each-fade {
+
+    width: 100%;
+    z-index: 999;
+    height: 100%;
+  }
+  
+  .each-fade > div {
+    z-index: 998;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .each-fade > div img {
+    width: 350px;
+    height: 380px;
+    margin: 0px auto;
+    z-index: 998;
+    object-fit: cover;
+  }
+  
+  .each-fade p {
+    width: 25%;
+    font-size: 1em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    margin: 0;
+    background: #adceed;
+  }
 
 .footer {
     background-color: #001529;
@@ -225,3 +260,4 @@ a:hover{
     padding: 20px;
     align-items: center;
 }
+

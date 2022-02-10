@@ -1,6 +1,8 @@
-import React, { useMemo, useRef } from 'react'
-import { Canvas, useFrame } from 'react-three-fiber'
-import * as THREE from 'three'
+import React, { useMemo, useRef } from 'react';
+import { Canvas, useFrame } from 'react-three-fiber';
+import * as THREE from 'three';
+import styled from 'styled-components';
+import styles from '../Styles/App.css';
 
 const roundedSquareWave = (t, delta, a, f) => {
   return ((2 * a) / Math.PI) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
@@ -57,19 +59,22 @@ function Dots() {
     ref.current.instanceMatrix.needsUpdate = true
   })
   return (
-    <instancedMesh ref={ref} args={[null, null, 10000]}>
+    <instancedMesh ref={ref} args={[null, null, 100000]}>
       <circleBufferGeometry args={[0.15]} />
       <meshBasicMaterial />
     </instancedMesh>
   )
 }
 
+
 const Breathe = () => {
   return (
-    <Canvas orthographic camera={{ zoom: 20 }} colorManagement={false}>
-      <color attach="background" args={['black']} />
-      <Dots />
-    </Canvas>
+    <Body>
+      <Canvas id='canvas' orthographic camera={{ zoom: 20 }} colorManagement={false}>
+        {/* <color attach="background" args={['black']} /> */}
+        <Dots />
+      </Canvas>
+    </Body>
   )
 }
 
