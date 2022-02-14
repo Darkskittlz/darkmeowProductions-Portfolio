@@ -125,9 +125,10 @@ function AnimationCanvas() {
 const TitleBox = styled.div`
     display: flex;
     position: fixed;
+    z-index: 999;
     width: calc(100% - 200px);
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 70px;
     @media (max-width: 860px){
         display: flex;
         justify-content: center;
@@ -215,7 +216,6 @@ const Card = styled.div`
 const ProductGrid = () => {
     return (
         <>
-            <TitleBox><Title>Products</Title></TitleBox>
             <Body>
                 <Fade>
                     {fadeImages.map((fadeImage, index) => (
@@ -233,10 +233,13 @@ const ProductGrid = () => {
 }
 
 
+
+
 const Products = () => {
     return (
         <>
             <ProductGrid />
+            <TitleBox><Title>Products</Title></TitleBox>
             <div className="anim">
                 <Suspense fallback={<div>Loading...</div>}>
                     <AnimationCanvas />

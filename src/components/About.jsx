@@ -179,6 +179,28 @@ export function MeshAnim({
     );
 }
 
+const TitleBox = styled.div`
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 200px);
+    justify-content: center;
+    margin-top: 70px;
+    @media (max-width: 860px){
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+`
+
+const Title = styled.h1`
+    font-size: 80px;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 0;
+    color: white;
+`
+
+
 
 const About = () => {
     return (
@@ -186,6 +208,7 @@ const About = () => {
             <div className="app">
                 <div className="anim">
                     <Suspense fallback={<div>Loading...</div>}>
+                    <TitleBox><Title>About The Team</Title></TitleBox>
                         <AnimationCanvas />
                     </Suspense>
                 </div>
