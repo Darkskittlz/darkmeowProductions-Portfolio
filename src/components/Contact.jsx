@@ -10,6 +10,7 @@ const roundedSquareWave = (t, delta, a, f) => {
 }
 
 function Dots() {
+
     const ref = useRef()
     const { vec, transform, positions, distances } = useMemo(() => {
         const vec = new THREE.Vector3()
@@ -32,6 +33,7 @@ function Dots() {
         })
 
         // Precompute initial distances with octagonal offset
+
         const right = new THREE.Vector3(1, 0, 0)
         const distances = positions.map((pos) => {
             return pos.length() + Math.cos(pos.angleTo(right) * 8) * 0.5
@@ -56,6 +58,7 @@ function Dots() {
 
             // Update Matrix4 for this instance
             ref.current.setMatrixAt(i, transform)
+
         }
         ref.current.instanceMatrix.needsUpdate = true
     })
@@ -74,6 +77,7 @@ const CanvasContainer = styled.div`
 `
 
 const Breathe = () => {
+
     return (
         <CanvasContainer>
             <Canvas orthographic camera={{ zoom: 20 }} colorManagement={false}>
@@ -83,6 +87,7 @@ const Breathe = () => {
         </CanvasContainer>
     )
 }
+
 
 const Header = styled.div`
 width: 100%;
@@ -95,7 +100,6 @@ grid-row: 1;
 color: white;
 font-family: "Yellowtail";
 `
-
 const Card = styled.div`
     width: 100%;
     display: flex;
@@ -119,7 +123,6 @@ const Card = styled.div`
         width: 100%;
   }
 `
-
 const ContactCard = styled.div`
     width: 100%;
     display: flex;
@@ -134,10 +137,8 @@ const ContactCard = styled.div`
     border-radius: 10px;
     box-shadow: 0 0 10px #fff; 
     background-color: rgba(255, 255, 255, 0.5);
-
-
     button {
-        background: transparent;
+        background-color: rgba(25, 144, 255, 0.6);
         border: 3px solid #001528;
         border-style: double;
         border-radius: 10px;
@@ -161,7 +162,6 @@ const ContactCard = styled.div`
   }
 
 `
-
 const ModalCard = styled.div`
     width: 100%;
     display: flex;
@@ -171,7 +171,6 @@ const ModalCard = styled.div`
     border-radius: 10px;
     box-shadow: 0 0 10px #fff; 
     background-color: rgba(255, 255, 255, 0.8);
-
     button {
         background: #fff;
         color: #001528;
@@ -192,7 +191,6 @@ const ModalCard = styled.div`
         box-shadow: 0 0 10px #fff; 
         cursor: pointer;
     }
-
     a {
         color: #001528
     }
@@ -216,7 +214,9 @@ const ModalCard = styled.div`
         width: 600px;
   }
 `
-
+// const Container = styled.div`
+//     width: calc(100% + 400px);
+// `
 const Body = styled.section`
     backdrop-filter: blur(10px);
     z-index: 999;
@@ -231,7 +231,15 @@ const Body = styled.section`
     margin-top: 2%;
     align-content: center;
     color: white;
-
+    font-family: Futura;
+    
+    @media (max-width: 800px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    }
     h1 {
         color: white;
         font-size: 25px;
@@ -251,28 +259,25 @@ const Body = styled.section`
         width: 700px;
   }
 `
-
-
 const Contact = () => {
     const [Modal1, open, close] = useModal("root", {
         preventScroll: true,
         closeOnOverlayClick: false
     })
-
     const [Modal2, open2, close2] = useModal("root", {
         preventScroll: true,
         closeOnOverlayClick: false
     })
-
     const [Modal3, open3, close3] = useModal("root", {
         preventScroll: true,
         closeOnOverlayClick: false
     })
-
     return (
         <>
             <Breathe />
+
             <Body>
+                {/* <Container> */}
                 <Header>Contact</Header>
                 <Card>
                     <h1>Interested in working with us? Thinking about checking out our other projects? Just want to tell us we did a good job? Here's where to do it.</h1>
@@ -320,8 +325,8 @@ const Contact = () => {
                     </Modal3>
                 </ContactCard>
             </Body>
+
         </>
     )
 }
-
 export default Contact
