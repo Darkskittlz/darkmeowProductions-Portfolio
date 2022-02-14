@@ -1,7 +1,6 @@
 import '../App.css';
 import React, { Suspense, useCallback, useMemo, useRef } from 'react';
 import { Canvas, extend, useFrame, useLoader, useThree } from 'react-three-fiber';
-import { Container, Row, Col } from 'react-grid-system';
 import typewriter from '../assets/notMyType.otf';
 import * as THREE from 'three';
 import circleImg from '../assets/circle.png';
