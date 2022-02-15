@@ -224,9 +224,9 @@ const Body = styled.section`
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-gap: 20px;
-    width: 97%;
+    width: 92%;
     margin-top: 20%;
-    margin-left: 3%;
+    margin-left: 7%;
     padding: 20px;
     margin-top: 2%;
     align-content: center;

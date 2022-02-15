@@ -125,7 +125,7 @@ function AnimationCanvas() {
 const TitleBox = styled.div`
     display: flex;
     position: fixed;
-    z-index: 999;
+    z-index: 998;
     width: calc(100% - 200px);
     justify-content: center;
     margin-top: 70px;
@@ -153,7 +153,7 @@ const Body = styled.div`
     width: 40%;
     top: 10%;
     left: 38.5%;
-    z-index: 999;
+    z-index: 995;
     position: fixed;
     height: 100%;
 
@@ -173,7 +173,7 @@ const Card = styled.div`
         width: 100%;
         flex-direction: column;
         backdrop-filter: blur(4px);
-        z-index: 999;
+        z-index: 998;
         background-image: url(fadeImage.url),
 
         img {
