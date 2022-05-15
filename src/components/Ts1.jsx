@@ -307,7 +307,7 @@ const ts1 = () => {
                 <div className="anim">
                     <Suspense fallback={<div>Loading...</div>}>
                         <TitleBox>
-                            <Title>tsParticles #1 </Title>
+                            <Title>#1 </Title>
                         </TitleBox>
                         <AnimationCanvas />
                     </Suspense>

@@ -54,13 +54,13 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </Menu.Item>
                     <Menu.Item icon={<BulbOutlined />}>
-                        <Link to="/ts1">tsParticles 1</Link>
+                        <Link to="/ts1">#1</Link>
                     </Menu.Item>
                     <Menu.Item icon={<FundOutlined />}>
-                        <Link to="/ts2">tsParticles 2</Link>
+                        <Link to="/ts2">#2</Link>
                     </Menu.Item>
                     <Menu.Item icon={<ContactsOutlined />}>
-                        <Link to="/ts3">tsParticles3</Link>
+                        <Link to="/ts3">#3</Link>
                     </Menu.Item>
 
                 </Menu>

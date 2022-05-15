@@ -277,7 +277,7 @@ const ts3 = () => {
             <Breathe />
 
             <Body>
-                <Header>tsParticles #3</Header>
+                <Header>#3</Header>
 
             </Body>
 

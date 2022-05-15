@@ -238,7 +238,7 @@ const ProductGrid = () => {
 const Ts2 = () => {
     return (
         <>
-            <TitleBox><Title>tsParticles #2</Title></TitleBox>
+            <TitleBox><Title>#2</Title></TitleBox>
             <div className="anim">
                 <Suspense fallback={<div>Loading...</div>}>
                     <AnimationCanvas />
