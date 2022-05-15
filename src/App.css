@@ -10,33 +10,37 @@
 
 /* adds text animation -nate */
 @keyframes glitch {
-	2%,
-	64% {
-		transform: translate(5px, 0) skew(1deg);
-	}
-	4%,
-	60% {
-		transform: translate(-5px, 1) skew(4deg);
-	}
-	62% {
-		transform: translate(2px, 0) skew(8deg);
-	}
+
+    2%,
+    64% {
+        transform: translate(5px, 0) skew(1deg);
+    }
+
+    4%,
+    60% {
+        transform: translate(-5px, 1) skew(4deg);
+    }
+
+    62% {
+        transform: translate(2px, 0) skew(8deg);
+    }
 }
 
-:root{
-    --text-primary:#000;
-    --bgPrimary:#fff;
+:root {
+    --text-primary: #000;
+    --bgPrimary: #fff;
     --bgSecondary: #F9F9F9;
     --pink: #0071bd;
     --light-blue: #e6f7ff;
     --border: #d9d9d9;
 }
 
-html, 
+html,
 body {
     box-sizing: border-box;
     overflow-x: hidden;
     height: 100%;
+    width: 100%;
 }
 
 * {
@@ -51,30 +55,30 @@ body {
     background-color: black;
 }
 
-a:hover{
+a:hover {
     color: var(--pink) !important;
 }
 
-.app{
+.app {
     display: flex;
     overflow: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
-.navbar{
+.navbar {
     width: 200px;
     background-color: rgb(0, 21, 41);
     z-index: 999;
 }
 
-.main{
+.main {
     width: calc(100% - 200px);
 }
 
-.nav-container{
+.nav-container {
     position: fixed;
     left: 0;
     opacity: 1;
@@ -84,20 +88,23 @@ a:hover{
     background-color: rgb(0, 21, 41);
 }
 
-.logo-container{
+.logo-container {
     background-color: #001529;
     display: flex;
     padding: 20px;
     align-items: center;
     width: 100%;
 }
-.logo{
-    margin:0 0 0 15px;
+
+.logo {
+    margin: 0 0 0 15px;
 }
-.logo a{
-   color: white;
+
+.logo a {
+    color: white;
 }
-.menu-control-container{
+
+.menu-control-container {
     display: none !important;
     position: absolute !important;
     right: 10px !important;
@@ -107,7 +114,7 @@ a:hover{
     border: none !important;
 }
 
-.loader{
+.loader {
     height: 81vh;
     display: flex;
     justify-content: center;
@@ -116,7 +123,7 @@ a:hover{
 
 /* nate's css start */
 
-#canvas{
+#canvas {
     position: absolute;
 }
 
@@ -141,42 +148,42 @@ a:hover{
     font-size: 2.4rem;
     font-weight: bolder;
     position: relative;
-    color:  #845EC2;
+    color: #845EC2;
     text-shadow: #FEFEDF 1px 0 5px;
     animation: glitch 2s linear infinite;
 }
 
 /* nate's css end */
 
-@media screen and (max-width:1300px){
-    .main{
+@media screen and (max-width:1300px) {
+    .main {
         margin-left: 50px;
     }
 }
 
-@media screen and (max-width:1170px){
-    .main{
+@media screen and (max-width:1170px) {
+    .main {
         margin-left: 50px;
     }
 }
 
-@media screen and (max-width:1000px){
-    .main{
-        margin-left: 100px;
+@media screen and (max-width:1000px) {
+    .nav-container {
+        width: 250px;
     }
 }
 
-@media screen and (max-width:800px){
-    .app{
+@media screen and (max-width:800px) {
+    .app {
         flex-direction: column;
         overflow: hidden;
     }
 
-    .navbar{
+    .navbar {
         flex: 1;
     }
 
-    .main{
+    .main {
         flex: 1;
         width: 100%;
         display: flex;
@@ -185,26 +192,28 @@ a:hover{
         margin-left: 0px;
     }
 
-    .nav-container{
+    .nav-container {
         height: 8vh;
-        position:fixed;
+        position: fixed;
         width: 100%;
         z-index: 100;
         background-color: var(--bgSecondary);
     }
 
-    .menu-control-container{
+    .menu-control-container {
         display: block !important;
     }
 
-    .ant-menu{
+    .ant-menu {
         position: absolute;
         right: 0px;
     }
-    .home-title{
+
+    .home-title {
         font-size: 1.4rem !important;
     }
-    .show-more{
+
+    .show-more {
         font-size: 1.3rem !important;
     }
 
@@ -222,24 +231,24 @@ a:hover{
     width: 100%;
     z-index: 999;
     height: 100%;
-  }
-  
-  .each-fade > div {
+}
+
+.each-fade>div {
     z-index: 998;
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-  
-  .each-fade > div img {
+}
+
+.each-fade>div img {
     width: 350px;
     height: 380px;
     margin: 0px auto;
     z-index: 998;
     object-fit: cover;
-  }
-  
-  .each-fade p {
+}
+
+.each-fade p {
     width: 25%;
     font-size: 1em;
     display: flex;
@@ -249,7 +258,7 @@ a:hover{
     z-index: 999;
     margin: 0;
     background: #adceed;
-  }
+}
 
 .footer {
     background-color: #001529;
@@ -258,8 +267,7 @@ a:hover{
     padding: 20px;
     align-items: center;
 
-    @media (max-width: 860px){
+    @media (max-width: 860px) {
         display: none;
     }
 }
-
