@@ -1,12 +1,12 @@
 # Collaboration Project
 
-![image](https://user-images.githubusercontent.com/66503942/152479626-834db5f0-748f-4573-a5fe-2f8b64eb0b0c.png)
+![image]()
 
-## A collaboration between Nathan, Tay, and myself Darkskittles. 
+## Backgrounds for Professional Development 
 
 
 ## Steps To Install
-<li>git clone https://github.com/Darkskittlz/DarkDev-Collab.git
+<li>git clone https://github.com/Darkskittlz/DarkMeow-Backgrounds.git
 <li>npm install
 <li>npm start
 
