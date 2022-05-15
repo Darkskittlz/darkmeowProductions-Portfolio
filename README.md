@@ -1,8 +1,6 @@
-# Collaboration Project
+# Backgrounds for Professional Development 
 
-![image]()
-
-## Backgrounds for Professional Development 
+<!-- ![image]() -->
 
 
 ## Steps To Install
