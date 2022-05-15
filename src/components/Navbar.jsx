@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className='logo-container'>
                 <Avatar src={icon} size="large" />
                 <Typography.Title level={2} className="logo">
-                    <Link to="/">Collaboration</Link>
+                    <Link to="/">DarkMeow</Link>
                 </Typography.Title>
                 <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}>
                     <MenuOutlined />
@@ -54,13 +54,13 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </Menu.Item>
                     <Menu.Item icon={<BulbOutlined />}>
-                        <Link to="/about">About</Link>
+                        <Link to="/ts1">tsParticles 1</Link>
                     </Menu.Item>
                     <Menu.Item icon={<FundOutlined />}>
-                        <Link to="/products">Products</Link>
+                        <Link to="/ts2">tsParticles 2</Link>
                     </Menu.Item>
                     <Menu.Item icon={<ContactsOutlined />}>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/ts3">tsParticles3</Link>
                     </Menu.Item>
 
                 </Menu>

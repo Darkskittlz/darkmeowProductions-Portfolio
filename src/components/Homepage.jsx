@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import homeElement from '../constants/homeElement.js'
 import '../App.css'
 
@@ -17,7 +17,7 @@ const Homepage = (props) => {
             <div id='homeBody'>
                 <div id='homeCard'>
                     <div id="canvas"></div>
-                    <h1 className='homeTitle'>Welcome to the Dev Shop</h1>
+                    <h1 className='homeTitle'>Backgrounds</h1>
                 </div>
             </div>
         </>

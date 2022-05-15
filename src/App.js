@@ -3,9 +3,9 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
 import { Navbar } from './components'
 import './App.css'
-import Products from './components/Products';
-import About from './components/About';
-import Contact from './components/Contact';
+import Ts1 from './components/Ts1';
+import Ts2 from './components/Ts2';
+import Ts3 from './components/Ts3';
 import Homepage from './components/Homepage';
 
 const App = () => {
@@ -19,24 +19,18 @@ const App = () => {
                     <div className='routes'>
                         <Routes>
                             <Route path='/' element={<Homepage />} />
-                            <Route path='/About' element={<About />} />
-                            <Route path='/Products' element={<Products />} />
-                            <Route path='/Contact' element={<Contact />} />                             
+                            <Route path='/Ts1' element={<Ts1 />} />
+                            <Route path='/Ts2' element={<Ts2 />} />
+                            <Route path='/Ts3' element={<Ts3 />} />                             
                         </Routes>
                     </div>
                 </Layout>
-                <div className='footer'>
+                {/* <div className='footer'>
                     <Typography.Title level={5} style={{ color: 'white', textAlign: 'center'}}>
                         Collab Project <br />
                         All Rights Reserved
                     </Typography.Title>
-                    <Space>
-                        <Link to="/">Home</Link>
-                        <Link to="/About">Exchanges</Link>
-                        <Link to="/Products">Products</Link>
-                        <Link to="/Contact">Contact</Link>
-                    </Space>
-                </div>
+                </div> */}
             </div>
         </div>
     )

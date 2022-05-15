@@ -235,11 +235,10 @@ const ProductGrid = () => {
 
 
 
-const Products = () => {
+const Ts2 = () => {
     return (
         <>
-            <ProductGrid />
-            <TitleBox><Title>Products</Title></TitleBox>
+            <TitleBox><Title>tsParticles #2</Title></TitleBox>
             <div className="anim">
                 <Suspense fallback={<div>Loading...</div>}>
                     <AnimationCanvas />
@@ -249,4 +248,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Ts2;

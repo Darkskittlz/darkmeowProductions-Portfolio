@@ -259,74 +259,29 @@ const Body = styled.section`
         width: 700px;
   }
 `
-const Contact = () => {
-    const [Modal1, open, close] = useModal("root", {
-        preventScroll: true,
-        closeOnOverlayClick: false
-    })
-    const [Modal2, open2, close2] = useModal("root", {
-        preventScroll: true,
-        closeOnOverlayClick: false
-    })
-    const [Modal3, open3, close3] = useModal("root", {
-        preventScroll: true,
-        closeOnOverlayClick: false
-    })
+const ts3 = () => {
+    // const [Modal1, open, close] = useModal("root", {
+    //     preventScroll: true,
+    //     closeOnOverlayClick: false
+    // })
+    // const [Modal2, open2, close2] = useModal("root", {
+    //     preventScroll: true,
+    //     closeOnOverlayClick: false
+    // })
+    // const [Modal3, open3, close3] = useModal("root", {
+    //     preventScroll: true,
+    //     closeOnOverlayClick: false
+    // })
     return (
         <>
             <Breathe />
 
             <Body>
-                {/* <Container> */}
-                <Header>Contact</Header>
-                <Card>
-                    <h1>Interested in working with us? Thinking about checking out our other projects? Just want to tell us we did a good job? Here's where to do it.</h1>
-                </Card>
-                <ContactCard>
-                    <p>Nate is a big idea guy! He goes up to 11!</p>
-                    <button onClick={open}>Nate</button>
-                    <Modal1>
-                        <ModalCard>
-                            <a href="https://coffeegremlin.com/" target="_blank" rel="noreferrer"><button>Portfolio</button></a>
-                            <a href="https://github.com/coffeegremlin" target="_blank" rel="noreferrer"><button>GitHub</button></a>
-                            <a href="https://www.linkedin.com/in/nathanmausert/" target="_blank" rel="noreferrer"><button>LinkedIn</button></a>
-                            <button>Email</button>
-                            {/* natemausert@gmail.com */}
-                            <button onClick={close}>Close</button>
-                        </ModalCard>
-                    </Modal1>
-                </ContactCard>
-                <ContactCard>
-                    <p>Jeremy kicked this off! He is the leader!</p>
-                    <button onClick={open2}>Jeremy</button>
-                    <Modal2>
-                        <ModalCard>
-                            <a href="https://www.darkmeowproductions.com/" target="_blank" rel="noreferrer"><button>Portfolio</button></a>
-                            <a href="https://github.com/Darkskittlz" target="_blank" rel="noreferrer"><button>GitHub</button></a>
-                            <a href="https://www.linkedin.com/in/jeremydev/" target="_blank" rel="noreferrer"><button>LinkedIn</button></a>
-                            <button>Email</button>
-                            {/* Darkskiiittles@gmail.com */}
-                            <button onClick={close2}>Close</button>
-                        </ModalCard>
-                    </Modal2>
-                </ContactCard>
-                <ContactCard>
-                    <p>Tay is stoked about the design! Yay 4 Tay!</p>
-                    <button onClick={open3}>Tay</button>
-                    <Modal3>
-                        <ModalCard>
-                            <a href="https://taywest.dev/" target="_blank" rel="noreferrer"><button>Portfolio</button></a>
-                            <a href="https://github.com/tayannewest" target="_blank" rel="noreferrer"><button>GitHub</button></a>
-                            <a href="https://www.linkedin.com/in/tayannewest/" target="_blank" rel="noreferrer"><button>LinkedIn</button></a>
-                            <button>Email</button>
-                            {/* tayanne.west@gmail.com */}
-                            <button onClick={close3}>Close</button>
-                        </ModalCard>
-                    </Modal3>
-                </ContactCard>
+                <Header>tsParticles #3</Header>
+
             </Body>
 
         </>
     )
 }
-export default Contact
+export default ts3
