@@ -185,7 +185,7 @@ const Card = styled.div`
             @media (max-width: 860px){
             height: 100%;
         }
-        }
+
 
         h1 {
             font-size: 25px;
@@ -195,7 +195,6 @@ const Card = styled.div`
             text-align: center;
             z-index: 999;
         }
-
         p {
             text-align: center;
             color: white;
@@ -211,34 +210,9 @@ const Card = styled.div`
     `
 
 
-
-
-const ProductGrid = () => {
-    return (
-        <>
-            <Body>
-                <Fade>
-                    {fadeImages.map((fadeImage, index) => (
-                        <div className="each-fade" key={index}>
-                            <Card>
-                                <img src={fadeImage.url} />
-                            </Card>
-                            <h2>{fadeImage.caption}</h2>
-                        </div>
-                    ))}
-                </Fade>
-            </Body>
-        </>
-    )
-}
-
-
-
-
 const Ts2 = () => {
     return (
         <>
-            <TitleBox><Title>#2</Title></TitleBox>
             <div className="anim">
                 <Suspense fallback={<div>Loading...</div>}>
                     <AnimationCanvas />
