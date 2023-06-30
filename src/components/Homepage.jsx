@@ -3,7 +3,7 @@ import Ts2 from './Ts2'
 import { init } from "ityped";
 import { BodyContainer, CrewColumn, CrewGridContainer, IntroContainer, IntroGridContainer } from '../Styles/Styles';
 import tristanIMG from "../assets/Tristan.png"
-import aliceIMG from "../assets/Alice.jpg"
+import aliceIMG from "../assets/Alice2.jpg"
 import headshot2 from "../assets/headshot2.jpg"
 import headshot3 from "../assets/headshot3.png"
 import headshot4 from "../assets/headshot4.png"
