@@ -1,2 +1,6 @@
 export { default as Ts1 } from './Ts1'
 export { default as Ts2 } from './Ts2'
+export { default as Homepage } from './Homepage'
+export { default as Film } from './Film'
+export { default as Photography } from './Photography'
+export { default as Content } from './Content'

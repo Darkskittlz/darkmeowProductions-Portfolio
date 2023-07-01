@@ -2,14 +2,48 @@ import styled, { keyframes } from 'styled-components';
 
 export const BodyContainer = styled.div`
     display: flex;
-    width: 20%;
-    margin-left:40%;
-    margin-right: 40%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     flex-direction: column;
     justify-content; center;
     z-index: 999;
     position: fixed;
     top: 0; 
+
+    @media screen and (max-width: 960px) {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: -50px;
+    }
+`
+
+export const NavContainer = styled.div`
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: row;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    box-shadow: 0 0 10px #09DEEE; ;
+`
+
+export const GridContainer = styled.div`
+    height: 483px;
+    margin-top: 10px;
+    overflow-y: scroll;
+    backdrop-filter: blur(5px); 
+
+    @media screen and (max-width: 960px) {
+        width: 100%;
+        border-radius: 10px;
+        margin-left: 0.5%;
+        overflow-y: scroll;
+        margin-top: 10px;
+        height: 700px;
+    }
 `
 
 export const Animation = keyframes`
@@ -23,11 +57,11 @@ export const Animation = keyframes`
 export const IntroGridContainer = styled.div`
     justify-content: center;
     display: flex;
-    margin-top: 120px;
+    margin-top: 42px;
 `
 
 export const IntroContainer = styled.div`
-    height: 17vh;
+    height: 24vh;
     width: 350px;
     padding: 0px 20px 20px 20px;
     align-items: center;
@@ -60,38 +94,69 @@ export const IntroContainer = styled.div`
         font-size: 30px;
         color: white;
     }
+
+    @media screen and (max-width: 960px) {
+        width: 90%;
+        height: 140px;
+        margin-left: 2%;
+
+        h1 {
+            flex-direction: column;
+            font-size: 18px;
+        }
+    }
 `
 
 export const CrewGridContainer = styled.div`
-    display: flex;
+    display: inline-flex;
     grid-gap: 10px;
-    margin-top: 45px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     grid-template-columns: 1fr; 
     justify-content: center;
     align-items: flex-start;
+    
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+        overflow: scroll;
+    }
 `
 
 export const CrewColumn = styled.div`
-    backdrop-filter: blur(5px); 
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
+    width: 225px;
+    margin-bottom: 20px;
 
     h1 {
         text-align: center;
         color: green;
-        padding: 20px 100px 20px 100px;
     }
 
     img {
-        object-fit: cover;
         height: 300px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
     }
 
     p {
         color: white;
     }
 
+    @media screen and (max-width: 960px) {
+        width: 390px;
+
+        img {
+            height: 30%;
+        }
+
+        h1 {
+            padding: 0px;
+            font-size: 15px;
+        }
+    }
 `

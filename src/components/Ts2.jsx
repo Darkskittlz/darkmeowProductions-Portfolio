@@ -1,12 +1,9 @@
 import '../App.css';
 import React, { Suspense, useCallback, useMemo, useRef } from 'react';
 import { Canvas, extend, useFrame, useLoader, useThree } from 'react-three-fiber';
-import typewriter from '../assets/notMyType.otf';
 import * as THREE from 'three';
 import circleImg from '../assets/circle.png';
-import { fadeImages } from '../constants/constants';
 import styled from 'styled-components';
-import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 extend({ OrbitControls })
@@ -121,93 +118,6 @@ function AnimationCanvas() {
         </Canvas>
     );
 }
-
-const TitleBox = styled.div`
-    display: flex;
-    position: fixed;
-    z-index: 998;
-    width: calc(100% - 200px);
-    justify-content: center;
-    margin-top: 70px;
-    @media (max-width: 860px){
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-`
-
-const Title = styled.h1`
-    font-size: 70px;
-    font-family: 'Yellowtail', cursive;
-    margin-bottom: 0;
-    color: white;
-`
-
-
-const Body = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    row-gap: 0rem;
-    width: 40%;
-    top: 10%;
-    left: 38.5%;
-    z-index: 995;
-    position: fixed;
-    height: 100%;
-
-    @media (max-width: 860px){
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        left: 2.5%;
-        top: 15%;
-        row-gap: 0rem;
-        width: 95%;
-  }
-`
-
-const Card = styled.div`
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
-        backdrop-filter: blur(4px);
-        z-index: 998;
-        background-image: url(fadeImage.url),
-
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-
-            @media (max-width: 860px){
-            height: 100%;
-        }
-
-
-        h1 {
-            font-size: 25px;
-            font-family: "notMyType";
-            color: white;
-            width: 100%;
-            text-align: center;
-            z-index: 999;
-        }
-        p {
-            text-align: center;
-            color: white;
-            font-size: 20px;
-        }
-
-        @media (max-width: 860px){
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-content: end;
-        }
-    `
 
 
 const Ts2 = () => {
