@@ -114,6 +114,7 @@ export const CrewGridContainer = styled.div`
     margin-bottom: 10px;
     grid-template-columns: 1fr; 
     justify-content: center;
+    width: 100%;
     align-items: flex-start;
     
     @media screen and (max-width: 960px) {
