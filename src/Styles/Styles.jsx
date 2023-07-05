@@ -10,9 +10,14 @@ export const BodyContainer = styled.div`
     z-index: 999;
     position: fixed;
     top: 0; 
+    overflow-y: scroll;
+    padding: 20px;
+    padding-bottom: 40px;
+
 
     @media screen and (max-width: 960px) {
         width: 95%;
+        height: 100vh;
         margin-left: 2.5%;
         margin-top: -50px;
     }
@@ -20,29 +25,19 @@ export const BodyContainer = styled.div`
 
 export const NavContainer = styled.div`
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     border-radius: 10px;
     padding: 10px;
     flex-direction: row;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     display: flex;
-    box-shadow: 0 0 10px #09DEEE; ;
-`
-
-export const GridContainer = styled.div`
-    height: 483px;
-    margin-top: 10px;
-    overflow-y: scroll;
-    backdrop-filter: blur(5px); 
+    box-shadow: 0 0 10px #09DEEE; 
 
     @media screen and (max-width: 960px) {
-        width: 100%;
-        border-radius: 10px;
-        margin-left: 0.5%;
-        overflow-y: scroll;
-        margin-top: 10px;
-        height: 700px;
+      margin-top: 40px;
+      justify-content: center;
+      margin-bottom: -20px;
     }
 `
 
@@ -57,13 +52,12 @@ export const Animation = keyframes`
 export const IntroGridContainer = styled.div`
     justify-content: center;
     display: flex;
-    margin-top: 42px;
+    margin-top: 20px;
 `
 
 export const IntroContainer = styled.div`
-    height: 24vh;
+    height: 15vh;
     width: 350px;
-    padding: 0px 20px 20px 20px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -83,81 +77,161 @@ export const IntroContainer = styled.div`
     }
 
     span {
-        color: #53b9ff;
+      color: #53b9ff;
     }
 
     h1 {
-        padding: 0px;
-        border-radius: 10px;
-        margin-top: 50px;
-        text-align: center;
-        font-size: 30px;
-        color: white;
+      padding: 0px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: -37px;
+      text-align: center;
+      font-size: 30px;
+      color: white;
     }
 
     @media screen and (max-width: 960px) {
-        width: 90%;
-        height: 140px;
-        margin-left: 2%;
+      width: 90%;
+      height: 70px;
+      margin-left: 2%;
+      display: none;
 
-        h1 {
-            flex-direction: column;
-            font-size: 18px;
-        }
-    }
-`
-
-export const CrewGridContainer = styled.div`
-    display: inline-flex;
-    grid-gap: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    grid-template-columns: 1fr; 
-    justify-content: center;
-    width: 100%;
-    align-items: flex-start;
-    
-    @media screen and (max-width: 960px) {
+      h1 {
         flex-direction: column;
-        overflow: scroll;
+        font-size: 18px;
+        margin-bottom: -37px;
+      }
     }
 `
 
-export const CrewColumn = styled.div`
+export const GridContainer = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: 960px){
+    height: 80vh;
+    overflow-y: scroll;
+  }
+`
+
+export const Grid2Container = styled.div`
+  display: flex;
+  z-index:999;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: center;
+`
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  z-index: 999;
+  margin-right: 5px;
+  backdrop-filter: blur(10px);
+  height: 400px;
+  width: 50%;
+  max-width: 889px;
+
+  @media only screen and (min-width: 781px) and (max-width: 1275px){
+     justify-content: flex-start;
+     backdrop-filter: none;
+     height: 442px;
+     width: 100%;
+    }
+
+  @media only screen and (max-width: 960px){
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      backdrop-filter: none;
+    }
+`
+
+export const Col = styled.div`
+  display: flex;
+  z-index: 999;
+  height: 100%;
+  justify-content: center;
+  border-radius: 10px;
+  margin-left: 5px;
+
+  @media only screen and (max-width: 768px){
+      width: 100%;
+      height: 80%;
+    }
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin-left: -10px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
+    object-fit: cover;
+    align-content: center;
     border-radius: 10px;
-    width: 225px;
-    margin-bottom: 20px;
+    opacity: 1;
 
-    h1 {
-        text-align: center;
-        color: green;
+    @media only screen and (max-width: 768px){
+      width: 100%;
     }
+  }
+`
 
-    img {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
+export const Col2 = styled.div`
+  display: flex;
+  border-radius: 10px;
+  opacity: 0.9;
+  opacity: 1;
+  width: 68%;
+  flex-direction: column;
+  z-index: 999;
+  height: 100%;
+  
+  @media only screen and (max-width: 960px){
+    display: flex;
+    flex: flex-wrap;
+    width: 100%;
+    height: 100%;
+    align-content: flex-end;
+    justify-content: space-between;
+  }
+`
+
+export const Col2Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 999;
+  border-radius: 10px;
+  justify-content: center;
+  align-content: start;
+
+  h1 {
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+  }
+
+  h3 {
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    padding-left: 5px;
+
+    @media screen and (max-width: 860px){
+      width: 97%;
+      padding: 5px;
+      border-radius: 10px;
     }
+  }
 
-    p {
-        color: white;
-    }
+  @media screen and (max-width: 860px) {
+    backdrop-filter: blur(10px);
+  }
 
-    @media screen and (max-width: 960px) {
-        width: 390px;
-
-        img {
-            height: 30%;
-        }
-
-        h1 {
-            padding: 0px;
-            font-size: 15px;
-        }
-    }
 `

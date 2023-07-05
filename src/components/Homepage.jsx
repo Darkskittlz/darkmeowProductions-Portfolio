@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import Ts2 from './Ts2'
 import { init } from "ityped";
-import { BodyContainer, CrewColumn, CrewGridContainer, GridContainer, IntroContainer, IntroGridContainer, NavContainer } from '../Styles/Styles';
+import { BodyContainer, Col, Col2, Col2Text, CrewColumn, CrewGridContainer, Grid2Container, GridContainer, IntroContainer, IntroGridContainer, NavContainer, Row } from '../Styles/Styles';
 import tristanIMG from "../assets/Tristan.png"
-import aliceIMG from "../assets/Alice2.jpg"
+import aliceIMG from "../assets/langtree (1).jpg"
 import headshot2 from "../assets/headshot2.jpg"
 import headshot3 from "../assets/headshot3.png"
 import headshot4 from "../assets/headshot4.png"
 import Navbar from 'react-bootstrap/Navbar';
+import ChakraModal from './ChakraModal';
 
 export default function Homepage() {
     const textRef = useRef();
@@ -25,79 +26,58 @@ export default function Homepage() {
             <BodyContainer>
                 <Navbar bg="dark" data-bs-theme="dark">
                     <NavContainer>
-                        <Navbar.Brand href="#home">Home</Navbar.Brand>
-                        <Navbar.Brand href="#film">Film</Navbar.Brand>
-                        <Navbar.Brand href="#photography">Photography</Navbar.Brand>
-                        <Navbar.Brand href="#content">Content</Navbar.Brand>
+                        <Navbar.Brand style={{ color: "white" }} href="#home">Home</Navbar.Brand>
+                        <Navbar.Brand style={{ color: "white" }} href="#film">Film</Navbar.Brand>
+                        <Navbar.Brand style={{ color: "white" }} href="#photography">Photography</Navbar.Brand>
+                        <Navbar.Brand style={{ color: "white" }} href="#content">Content</Navbar.Brand>
                     </NavContainer>
                 </Navbar>
                 <IntroGridContainer>
                     <IntroContainer>
                         <div>
                             <h1>
-                                DarkMeow Productions
+                                <h1 id="Title">DarkMeow Productions</h1>
                                 <br />
                                 <span ref={textRef} />
                             </h1>
                         </div>
                     </IntroContainer>
                 </IntroGridContainer>
+
                 <GridContainer>
-                    <CrewGridContainer>
-                        <CrewColumn>
-                            <img src={headshot2} alt="img" />
-                            <h1>Nathan</h1>
-                            <p>mollit do ut enim qui velit eu pariatur consectetur nisi proident do incididunt ullamco veniam veniam. esse ad culpa eiusmod veniam qui voluptate magna lorem aute ad officia ipsum aliqua velit magna eiusmod. pariatur officia sit labore sint id minim ea qui exercitation sed qui ullamco occaecat reprehenderit deserunt incididunt irure ut. </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={aliceIMG} alt="img" />
-                            <h1>Alice</h1>
-                            <p>culpa ut mollit irure sit enim deserunt minim occaecat laboris est sint consequat ut nisi Duis culpa nostrud laboris. commodo labore voluptate consequat ullamco sint dolor pariatur enim irure labore cupidatat ut ex consequat laboris Excepteur in. veniam esse irure consequat id eiusmod id do et nulla laboris Duis pariatur quis incididunt sit. </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={tristanIMG} alt="img" />
-                            <h1>Tristan</h1>
-                            <p>incididunt pariatur culpa dolor do mollit id eiusmod magna consequat voluptate labore do laborum pariatur ullamco. ad do minim consectetur consectetur deserunt pariatur ut ex dolore consequat sint fugiat tempor voluptate ipsum occaecat. consectetur cillum qui ad id et consectetur qui exercitation amet deserunt dolor laborum sunt do officia est. </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={headshot3} alt="img" />
-                            <h1>Mateo</h1>
-                            <p>officia do ea mollit ad esse mollit labore minim cupidatat commodo cillum ex nisi deserunt enim dolor Excepteur. elit anim fugiat nisi laborum adipiscing dolor eiusmod irure velit sit labore do nulla ea pariatur ipsum nulla in. amet sit est sit irure irure qui veniam in sint occaecat ea cillum officia laboris qui deserunt. minim nostrud nostrud </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={headshot4} alt="img" />
-                            <h1>Lynette</h1>
-                            <p>minim eiusmod amet ut nisi sed amet sunt occaecat amet laborum amet consequat do id ad sint ullamco. adipiscing proident labore aliqua ut id eu proident est ipsum minim labore ipsum esse eu proident. anim qui ex consectetur laboris veniam labore mollit minim aliquip minim eu veniam anim in cillum. id culpa ea reprehenderit mollit eiusmod sunt dolor </p>
-                        </CrewColumn>
-                    </CrewGridContainer>
-                    <CrewGridContainer>
-                        <CrewColumn>
-                            <img src={headshot2} alt="img" />
-                            <h1>Nathan</h1>
-                            <p>mollit do ut enim qui velit eu pariatur consectetur nisi proident do incididunt ullamco veniam veniam. esse ad culpa eiusmod veniam qui voluptate magna lorem aute ad officia ipsum aliqua velit magna eiusmod. pariatur officia sit labore sint id minim ea qui exercitation sed qui ullamco occaecat reprehenderit deserunt incididunt irure ut. </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={aliceIMG} alt="img" />
-                            <h1>Alice</h1>
-                            <p>culpa ut mollit irure sit enim deserunt minim occaecat laboris est sint consequat ut nisi Duis culpa nostrud laboris. commodo labore voluptate consequat ullamco sint dolor pariatur enim irure labore cupidatat ut ex consequat laboris Excepteur in. veniam esse irure consequat id eiusmod id do et nulla laboris Duis pariatur quis incididunt sit. </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={tristanIMG} alt="img" />
-                            <h1>Tristan</h1>
-                            <p>incididunt pariatur culpa dolor do mollit id eiusmod magna consequat voluptate labore do laborum pariatur ullamco. ad do minim consectetur consectetur deserunt pariatur ut ex dolore consequat sint fugiat tempor voluptate ipsum occaecat. consectetur cillum qui ad id et consectetur qui exercitation amet deserunt dolor laborum sunt do officia est. </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={headshot3} alt="img" />
-                            <h1>Mateo</h1>
-                            <p>officia do ea mollit ad esse mollit labore minim cupidatat commodo cillum ex nisi deserunt enim dolor Excepteur. elit anim fugiat nisi laborum adipiscing dolor eiusmod irure velit sit labore do nulla ea pariatur ipsum nulla in. amet sit est sit irure irure qui veniam in sint occaecat ea cillum officia laboris qui deserunt. minim nostrud nostrud </p>
-                        </CrewColumn>
-                        <CrewColumn>
-                            <img src={headshot4} alt="img" />
-                            <h1>Lynette</h1>
-                            <p>minim eiusmod amet ut nisi sed amet sunt occaecat amet laborum amet consequat do id ad sint ullamco. adipiscing proident labore aliqua ut id eu proident est ipsum minim labore ipsum esse eu proident. anim qui ex consectetur laboris veniam labore mollit minim aliquip minim eu veniam anim in cillum. id culpa ea reprehenderit mollit eiusmod sunt dolor </p>
-                        </CrewColumn>
-                    </CrewGridContainer>
+                    <Row>
+                        <Col>
+                            <img src={tristanIMG} alt="headshot" />
+                        </Col>
+                        <Col2>
+                            <Col2Text>
+                                <h1> Tristan </h1>
+                                <h3>
+                                    Excepteur anim sit ea irure qui et Duis adipiscing velit minim tempor ut dolore laboris nulla adipiscing do. irure sit reprehenderit eu elit occaecat reprehenderit aliquip Duis minim magna sed consectetur irure tempor aute. sed ea est do cillum proident mollit ipsum consequat officia nisi sunt Duis aliquip do in aute. esse adipiscing minim aute labore consectetur nulla voluptate adipiscing occaecat labore culpa veniam tempor qui quis proident mollit ex. cillum esse ipsum fugiat proident culpa sunt dolor veniam ullamco eiusmod amet officia nostrud labore exercitation esse anim. eiusmod id pariatur cupidatat eiusmod exercitation est aliquip ad irure id deserunt cillum enim veniam sunt minim.
+                                </h3>
+                            </Col2Text>
+                        </Col2>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <img src={aliceIMG} alt="headshot" />
+                        </Col>
+                        <Col2>
+                            <Col2Text>
+                                <h1> Alice </h1>
+                                <h3>
+                                    Excepteur anim sit ea irure qui et Duis adipiscing velit minim tempor ut dolore laboris nulla adipiscing do. irure sit reprehenderit eu elit occaecat reprehenderit aliquip Duis minim magna sed consectetur irure tempor aute. sed ea est do cillum proident mollit ipsum consequat officia nisi sunt Duis aliquip do in aute. esse adipiscing minim aute labore consectetur nulla voluptate adipiscing occaecat labore culpa veniam tempor qui quis proident mollit ex. cillum esse ipsum fugiat proident culpa sunt dolor veniam ullamco eiusmod amet officia nostrud labore exercitation esse anim. eiusmod id pariatur cupidatat eiusmod exercitation est aliquip ad irure id deserunt cillum enim veniam sunt minim.
+                                </h3>
+                            </Col2Text>
+                        </Col2>
+                    </Row>
                 </GridContainer>
+
+                <Grid2Container>
+                    <ChakraModal />
+                </Grid2Container>
+
+
             </BodyContainer>
         </>
     )

@@ -1,0 +1,9 @@
+.chakra-button {
+    height: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    #Title {
+        display: none;
+    }
+}
